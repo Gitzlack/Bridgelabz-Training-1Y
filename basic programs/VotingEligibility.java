@@ -1,16 +1,15 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class VotingEligibility {
+
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Random r = new Random();
+        int[] ages = new int[10];
+        for (int i = 0; i < 10; i++) ages[i] = r.nextInt(60);
 
-        System.out.print("Enter age: ");
-        int age = sc.nextInt();
-
-        if (age >= 18) {
-            System.out.println("The person's age is " + age + " and can vote.");
-        } else {
-            System.out.println("The person's age is " + age + " and cannot vote.");
+        System.out.println("Age | Can Vote");
+        for (int age : ages) {
+            System.out.println(age + " | " + (age >= 18));
         }
     }
 }
